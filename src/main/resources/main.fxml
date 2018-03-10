@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.embed.swing.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Plik">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#saveToFileOnAction" text="Zapisz do pliku" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edytuj">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#formatOnAction" text="Formatuj" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Pomoc">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox fx:id="hbox" minHeight="-Infinity" minWidth="-Infinity">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="150.0">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="add" layoutX="39.0" layoutY="38.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="73.0" text="Dodaj" />
+                     </children>
+                  </AnchorPane>
+                  <Label text="Indeks osób" />
+                  <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+            <ScrollPane fx:id="scroll" maxWidth="900.0" prefHeight="660.0" prefWidth="900.0">
+               <content>
+                  <AnchorPane fx:id="content" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="1000.0" />
+               </content>
+            </ScrollPane>
+            <GridPane fx:id="gridPane" prefHeight="500.0" prefWidth="300.0">
+               <children>
+                  <Label text="Imie" />
+                  <Label text="Nazwisko" GridPane.rowIndex="1" />
+                  <Label text="Nazwisko rodowe" GridPane.rowIndex="2" />
+                  <TextArea fx:id="description" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <TextField fx:id="name" GridPane.columnIndex="1" />
+                  <TextField fx:id="surname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="familyName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Opis" GridPane.rowIndex="7" />
+                  <Label text="Miejsce urodzenia" GridPane.rowIndex="3" />
+                  <Label text="Data urodzenia" GridPane.rowIndex="4" />
+                  <Label text="Data śmierci" GridPane.rowIndex="5" />
+                  <Label text="Miejsce spoczynku" GridPane.rowIndex="6" />
+                  <TextField fx:id="burialPlace" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <DatePicker fx:id="dateOfDeath" prefHeight="25.0" prefWidth="185.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <DatePicker fx:id="dateOfBirth" prefHeight="25.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="placeOfBirth" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="Mama" GridPane.rowIndex="8" />
+                  <Label text="Tata" GridPane.rowIndex="9" />
+                  <Button mnemonicParsing="false" onAction="#confirmOnAction" prefHeight="25.0" prefWidth="71.0" text="Ok" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="11" />
+                  <ComboBox fx:id="father" prefHeight="25.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <ComboBox fx:id="mother" prefHeight="25.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <RadioButton fx:id="men" mnemonicParsing="false" text="Mężczyzna" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <RadioButton fx:id="women" mnemonicParsing="false" text="Kobieta" GridPane.rowIndex="10" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="20.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
+</VBox>
